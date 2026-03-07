@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../data/content.json';
+const { brand, nav } = content;
+---
+
+<Layout
+  title="Terms of Service – SiteForge"
+  description="Terms of Service for SiteForge web design services."
+>
+
+<!-- Nav -->
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="mx-4 mt-3 rounded-2xl bg-[#0A0F1E]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+    <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 flex-shrink-0" aria-label="SiteForge home">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand to-brand-cyan flex items-center justify-center flex-shrink-0">
+          <span class="text-white font-bold text-xs font-display">S</span>
+        </div>
+        <span class="font-display font-bold text-base text-white tracking-wide">{brand.name}</span>
+      </a>
+      <a href="/" class="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200">← Back to home</a>
+    </div>
+  </div>
+</header>
+
+<!-- Content -->
+<main class="bg-white min-h-screen pt-28 pb-24">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="mb-12">
+      <span class="inline-block text-xs font-semibold text-brand bg-brand-light px-3 py-1 rounded-full mb-4 tracking-wide uppercase">Legal</span>
+      <h1 class="text-4xl font-display font-bold text-ink mb-3">Terms of Service</h1>
+      <p class="text-sm text-ink/40 font-medium">SiteForge &nbsp;·&nbsp; Last updated: March 7, 2026</p>
+    </div>
+
+    <!-- Body -->
+    <div class="prose-legal">
+
+      <section>
+        <h2>1. The Service</h2>
+        <p>SiteForge provides professional static website design services for local service businesses for a one-time fee of $497.</p>
+        <p>The service includes:</p>
+        <ul>
+          <li>Design and development of a basic business website</li>
+          <li>Up to 5 standard pages (Home, Services, About, Contact, and one additional page)</li>
+          <li>Mobile-friendly responsive layout</li>
+          <li>Basic contact form integration</li>
+        </ul>
+        <p>Custom features, advanced integrations, or additional pages may require a separate quote.</p>
+      </section>
+
+      <section>
+        <h2>2. Payment</h2>
+        <ul>
+          <li>50% payment upfront to begin the project</li>
+          <li>50% payment due upon client approval of the finished website</li>
+          <li>Payments are processed securely via Stripe</li>
+          <li>Work will not begin until the initial payment has been received</li>
+          <li>Failure to complete the final payment may result in withholding delivery of the final website files</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Client Responsibilities</h2>
+        <p>To begin the project, the client must provide: business information, service descriptions, contact details, and logos or images if available.</p>
+        <p>Delays in providing required information may delay project delivery.</p>
+      </section>
+
+      <section>
+        <h2>4. Delivery</h2>
+        <p>Estimated delivery time is 3–5 business days after all required client information and materials have been received. Delivery timelines are estimates and may vary depending on the availability of required materials from the client.</p>
+      </section>
+
+      <section>
+        <h2>5. Revisions</h2>
+        <p>Each project includes two rounds of revisions at no additional cost. A revision round includes reasonable adjustments to text, layout, or images. Additional revisions may be available for a flat fee. Major structural changes or additional features may require a separate quote.</p>
+      </section>
+
+      <section>
+        <h2>6. Ownership</h2>
+        <p>Upon full and final payment, the client receives full ownership of the website files. SiteForge retains no ownership rights over the delivered website. SiteForge may display non-confidential portions of the work in its portfolio unless otherwise requested by the client.</p>
+      </section>
+
+      <section>
+        <h2>7. Refund Policy</h2>
+        <ul>
+          <li>Full refund if work has not yet started</li>
+          <li>50% refund if requested within 48 hours of delivery</li>
+          <li>No refunds after the client approves the final version</li>
+        </ul>
+        <p>Because digital services require time and labor, refunds may not be granted once development work has substantially begun.</p>
+      </section>
+
+      <section>
+        <h2>8. Chargebacks and Payment Disputes</h2>
+        <p>Clients agree to contact SiteForge directly at <a href="mailto:hello@siteforgeonline.com">hello@siteforgeonline.com</a> to resolve any concerns before initiating a payment dispute or chargeback. Submitting a chargeback after the project has been delivered or approved may be considered a violation of these terms. SiteForge reserves the right to provide project records, communication history, and delivery evidence to Stripe or payment processors in the event of a dispute.</p>
+      </section>
+
+      <section>
+        <h2>9. Hosting</h2>
+        <p>SiteForge does not include hosting in the standard $497 package. Clients may choose their own hosting provider. An optional Website Care Plan ($49/month) may be available and may include hosting, maintenance, and support.</p>
+      </section>
+
+      <section>
+        <h2>10. Limitation of Liability</h2>
+        <p>SiteForge shall not be liable for any indirect, incidental, or consequential damages, including but not limited to: lost revenue, lost business opportunities, downtime caused by hosting providers, or technical issues outside SiteForge's control. SiteForge's total liability shall not exceed the total amount paid by the client for the project.</p>
+      </section>
+
+      <section>
+        <h2>11. Governing Law</h2>
+        <p>These terms are governed by applicable laws. Both parties agree to attempt resolving disputes via email communication before pursuing legal action. Contact: <a href="mailto:hello@siteforgeonline.com">hello@siteforgeonline.com</a></p>
+      </section>
+
+      <section>
+        <h2>12. Abandoned Projects</h2>
+        <p>If the client becomes unresponsive for more than 14 consecutive days, the project may be considered abandoned and SiteForge may close the project. Payments already made are non-refundable. A restart fee may apply if the client wishes to resume. SiteForge will make reasonable attempts to contact the client before marking a project as abandoned.</p>
+      </section>
+
+      <section>
+        <h2>13. Client Content Responsibility</h2>
+        <p>The client is responsible for all content provided, including text, images, logos, trademarks, and business information. The client confirms they have the legal right to use any content they provide. SiteForge is not responsible for verifying ownership or licensing of client-supplied materials. The client agrees to indemnify SiteForge from any claims arising from content they provided.</p>
+      </section>
+
+      <section>
+        <h2>14. Scope of Work Limitations</h2>
+        <p>The $497 package includes only the services described in Section 1. Additional features, pages, or integrations not in the original scope may require an additional fee. Examples include: additional pages, advanced functionality, complex design changes, and additional content writing or image sourcing.</p>
+      </section>
+
+      <section>
+        <h2>15. No SEO or Performance Guarantees</h2>
+        <p>SiteForge provides website design and development services only. While websites are built following common best practices for usability and basic technical structure, SiteForge does not guarantee:</p>
+        <ul>
+          <li>Search engine rankings</li>
+          <li>Website traffic</li>
+          <li>Lead generation</li>
+          <li>Business results or revenue</li>
+        </ul>
+        <p>Search engine performance depends on many factors outside SiteForge's control, including search engine algorithms, competition in the client's market, client-provided content, and marketing efforts outside the website.</p>
+        <p>Unless explicitly agreed in writing, SEO services, marketing services, and advertising services are not included in the standard website package.</p>
+      </section>
+
+    </div>
+
+    <!-- Footer nav -->
+    <div class="mt-16 pt-8 border-t border-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-sm text-ink/40">© <span id="year"></span> SiteForge. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/privacy" class="text-sm text-ink/40 hover:text-brand transition-colors">Privacy Policy</a>
+        <a href="/" class="text-sm text-brand hover:text-brand-dark font-medium transition-colors">← Back to home</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</Layout>
+
+<style>
+  .prose-legal section {
+    margin-bottom: 2.5rem;
+  }
+  .prose-legal h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0A0F1E;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #F1F5F9;
+  }
+  .prose-legal p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: #374151;
+    margin-bottom: 0.75rem;
+  }
+  .prose-legal ul {
+    margin: 0.5rem 0 0.75rem 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+  .prose-legal ul li {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: #374151;
+    margin-bottom: 0.25rem;
+  }
+  .prose-legal a {
+    color: #3B82F6;
+    text-decoration: none;
+  }
+  .prose-legal a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script is:inline>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
