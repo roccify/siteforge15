@@ -1,0 +1,316 @@
+{
+  "brand": {
+    "name": "SiteForge",
+    "tagline": "Professional websites for local service businesses",
+    "logo": "/images/logo-placeholder.svg",
+    "formEndpoint": "roccify@gmail.com",
+    "stripePaymentUrl": "https://buy.stripe.com/YOUR_PAYMENT_LINK",
+    "stripeCarePlanUrl": "https://buy.stripe.com/YOUR_CARE_PLAN_LINK"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Work",
+        "href": "#demos"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "label": "Get Your Website",
+      "href": "#pricing"
+    }
+  },
+  "hero": {
+    "headline1": "Stop losing customers",
+    "headline2": "to better-looking websites.",
+    "subheadline": "A professional website that helps local service businesses get found online and turn visitors into calls.",
+    "trustPoints": [
+      "Delivered in 3–5 days",
+      "Built for Google and mobile",
+      "No lock-in – you own everything"
+    ],
+    "ctaPrimary": {
+      "label": "Get Your Website",
+      "href": "#pricing"
+    },
+    "ctaSecondary": {
+      "label": "See Our Work",
+      "href": "#demos"
+    },
+    "mockupImage": "/images/hero-mockup-placeholder.jpg",
+    "socialProof": "500+ websites built for local service businesses",
+    "trustLine": "Used by local service businesses across the United States."
+  },
+  "demos": [
+    {
+      "company": "Mesa Flow Plumbing",
+      "vertical": "Plumber",
+      "url": "https://plumbing13.vercel.app/",
+      "thumbnail": "/images/demos/plumbing.jpg"
+    },
+    {
+      "company": "Pinnacle Power Systems",
+      "vertical": "Electrician",
+      "url": "https://electrician09.vercel.app/",
+      "thumbnail": "/images/demos/electrician.jpg"
+    },
+    {
+      "company": "Green Valley Landscaping",
+      "vertical": "Landscaper",
+      "url": "https://landscaping34.vercel.app/",
+      "thumbnail": "/images/demos/landscaping.jpg"
+    }
+  ],
+  "howItWorks": {
+    "supportingLine": "Simple process, fast delivery.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Send your business info",
+        "description": "Fill out a short form with your name, phone, services and service area. Takes about 5 minutes."
+      },
+      {
+        "number": "02",
+        "title": "We build your website",
+        "description": "Professional design with contact form, click-to-call button and Google Maps integration."
+      },
+      {
+        "number": "03",
+        "title": "Launch in 3–5 days",
+        "description": "Your site goes live and customers can find and contact you directly from Google."
+      }
+    ]
+  },
+  "industries": {
+    "intro": "Built for local service businesses that want a professional website without expensive agency pricing.",
+    "items": [
+      {
+        "label": "Plumber"
+      },
+      {
+        "label": "Electrician"
+      },
+      {
+        "label": "HVAC"
+      },
+      {
+        "label": "Roofer"
+      },
+      {
+        "label": "Landscaper"
+      },
+      {
+        "label": "Contractor"
+      },
+      {
+        "label": "Pressure Washing"
+      },
+      {
+        "label": "Tree Service"
+      },
+      {
+        "label": "Garage Door"
+      },
+      {
+        "label": "Painter"
+      },
+      {
+        "label": "Pest Control"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Get more calls from customers",
+      "description": "Click-to-call phone button lets visitors call you directly from any page.",
+      "icon": "🚀"
+    },
+    {
+      "title": "Show up in Google searches",
+      "description": "Local SEO structure and Google Maps integration built in from day one.",
+      "icon": "🔍"
+    },
+    {
+      "title": "Build trust instantly",
+      "description": "Professional design that makes your business look credible before the first call.",
+      "icon": "🔒"
+    },
+    {
+      "title": "Works on every phone",
+      "description": "Most customers search on mobile. Your site is built for that first.",
+      "icon": "📱"
+    },
+    {
+      "title": "Customers can reach you instantly",
+      "description": "Contact form sends inquiries directly to your email. Never miss a lead.",
+      "icon": "⚡"
+    },
+    {
+      "title": "One-time payment – done",
+      "description": "No subscriptions, no hidden fees. Pay once and own your site forever.",
+      "icon": "💰"
+    }
+  ],
+  "comparison": {
+    "title": "A simpler alternative to expensive agency builds",
+    "columns": [
+      "Agency",
+      "DIY Builders",
+      "SiteForge"
+    ],
+    "rows": [
+      {
+        "label": "Typical price",
+        "values": [
+          "$3,000–$8,000",
+          "$20–$50/mo",
+          "$497 one-time"
+        ]
+      },
+      {
+        "label": "Build time",
+        "values": [
+          "Weeks to months",
+          "Build yourself",
+          "3–5 days"
+        ]
+      },
+      {
+        "label": "Design quality",
+        "values": [
+          "High",
+          "Basic templates",
+          "Professional"
+        ]
+      },
+      {
+        "label": "Effort required",
+        "values": [
+          "Meetings & approvals",
+          "Build it yourself",
+          "We do everything"
+        ]
+      },
+      {
+        "label": "Ongoing cost",
+        "values": [
+          "$100–$300+/mo",
+          "$20–$50/mo",
+          "$0"
+        ]
+      },
+      {
+        "label": "You own the site",
+        "values": [
+          "Sometimes",
+          "Platform-dependent",
+          "Yes – full files"
+        ]
+      }
+    ]
+  },
+  "pricing": {
+    "price": "$497",
+    "period": "one-time",
+    "includes": [
+      "4-page website (Home, Services, About, Contact)",
+      "Mobile-friendly design",
+      "Contact form",
+      "Contact form leads sent directly to your email",
+      "Google Maps integration",
+      "Fast loading",
+      "Basic on-page SEO structure",
+      "Delivered in 3-5 business days",
+      "You own the site – full backup file included",
+      "One round of small edits after delivery"
+    ],
+    "cta": "Get Your Website",
+    "microTrust": [
+      "Secure payment via Stripe",
+      "No subscription required",
+      "You own the website files"
+    ],
+    "carePlan": "Optional: hosting, updates and support for $49/month",
+    "afterPayment": {
+      "title": "What happens after payment",
+      "steps": [
+        "You receive a short business info form",
+        "We start building your website",
+        "Your site is ready in 3-5 days"
+      ]
+    },
+    "urgency": "Launch pricing – limited availability",
+    "originalPrice": "$997"
+  },
+  "faq": [
+    {
+      "question": "How do I know SiteForge is legitimate?",
+      "answer": "We only charge 50% upfront. The other 50% is due after you approve the finished site. You can review everything before final payment. Payment is processed securely through Stripe."
+    },
+    {
+      "question": "Why is it only $497?",
+      "answer": "Because we use a streamlined build process and pre-built components. This lets us deliver professional websites much faster than traditional agencies – without the overhead of account managers, lengthy revisions and agency markups. You get the same result for a fraction of the price."
+    },
+    {
+      "question": "Do I own the website after purchase?",
+      "answer": "Yes, 100%. You receive the complete backup file on delivery. You can host it anywhere – Netlify, Vercel, cPanel, or your own server. No lock-in, no ongoing fees owed to us."
+    },
+    {
+      "question": "Can I use my own domain?",
+      "answer": "Absolutely. We build the site and hand you the files. You connect it to any domain you own. If you don't have one yet, we'll point you in the right direction."
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "3 to 5 business days after we receive your information. You fill out a short form (takes about 5 minutes), and we handle everything from there."
+    },
+    {
+      "question": "What information do you need from me?",
+      "answer": "Business name, services offered, contact details, and a few photos if you have them. It takes about 5 minutes to fill out the onboarding form we send after payment."
+    },
+    {
+      "question": "Can I request edits after delivery?",
+      "answer": "Yes. Two rounds of edits are included at no extra cost. Additional revision rounds are available at a flat rate."
+    },
+    {
+      "question": "Do you provide hosting?",
+      "answer": "Hosting isn't included in the $497. Many clients host for free on Netlify or through their domain provider. We also offer a $49/month Website Care Plan that includes hosting and ongoing support."
+    },
+    {
+      "question": "Can I edit the website myself later?",
+      "answer": "The site is built with static HTML – you'd need a developer to make major changes. For small updates (phone number, hours, services), our $49/month Care Plan includes one change per month."
+    },
+    {
+      "question": "What's included in the $497?",
+      "answer": "A 4-page website (Home, Services, About, Contact), mobile-friendly design, contact form, Google Maps integration, local SEO structure, and full backup files. Delivered in 3-5 business days."
+    }
+  ],
+  "cta": {
+    "headline": "Stop losing customers to competitors with better websites.",
+    "supporting": "Get your website live this week. One-time $497 – no monthly fees.",
+    "button": "Get Your Website →"
+  },
+  "footer": {
+    "tagline": "Built for local service businesses. Professional websites delivered in 3-5 days.",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Terms of Service",
+        "href": "/terms"
+      }
+    ]
+  },
+  "seo": {
+    "title": "SiteForge – Professional Websites for Local Service Businesses",
+    "description": "Professional websites for plumbers, electricians, contractors and other local service businesses. Delivered in 3-5 days for $497."
+  }
+}

@@ -1,0 +1,198 @@
+---
+const { hero } = Astro.props;
+---
+
+<section class="relative min-h-screen flex items-center bg-[#0A0F1E] overflow-hidden noise pt-24 pb-16">
+  <div class="hero-mesh absolute inset-0" aria-hidden="true"></div>
+  <div class="dot-grid absolute inset-0 opacity-40" aria-hidden="true"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" aria-hidden="true"></div>
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-cyan/8 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 w-full">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 xl:gap-20 items-center">
+
+      <!-- LEFT -->
+      <div data-aos="fade-up" data-aos-duration="800">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-medium tracking-wide mb-7">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+          {hero.trustLine}
+        </div>
+
+        <!-- H1 -->
+        <h1 class="font-display font-bold text-white leading-[1.05] tracking-tight mb-5" style="font-size: clamp(2.4rem, 4.5vw, 3.75rem);">
+          {hero.headline1}<br/>
+          <span class="bg-gradient-to-r from-brand via-brand-cyan to-blue-400 bg-clip-text text-transparent">
+            {hero.headline2}
+          </span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base text-white/55 leading-relaxed mb-8 max-w-md">
+          {hero.subheadline}
+        </p>
+
+        <!-- Benefit bullets -->
+        <ul class="space-y-3 mb-10">
+          {hero.trustPoints.map((point: string) => (
+            <li class="flex items-center gap-3 text-sm text-white/70">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-brand/20 border border-brand/30 flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {point}
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <a
+            href={hero.ctaPrimary.href}
+            class="group inline-flex items-center gap-2.5 px-9 py-4 rounded-xl bg-brand text-white font-bold text-lg hover:bg-brand-dark transition-all duration-200 shadow-[0_0_40px_rgba(59,130,246,0.4)] hover:shadow-[0_0_60px_rgba(59,130,246,0.6)] hover:scale-[1.02]"
+          >
+            {hero.ctaPrimary.label}
+            <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a
+            href={hero.ctaSecondary.href}
+            class="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-white/15 text-white/70 font-semibold text-base hover:border-white/30 hover:text-white transition-all duration-200"
+          >
+            {hero.ctaSecondary.label}
+          </a>
+        </div>
+
+        <!-- Social proof -->
+        <div class="flex items-center gap-3">
+          <div class="flex -space-x-2">
+            {['bg-blue-400','bg-green-400','bg-orange-400','bg-violet-400'].map((c: string) => (
+              <div class={`w-7 h-7 rounded-full ${c} border-2 border-[#0A0F1E] flex items-center justify-center`}>
+                <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            ))}
+          </div>
+          <p class="text-xs text-white/35">{hero.socialProof}</p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Browser mockup - toned down animation -->
+      <div class="relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+
+        <div class="absolute -inset-6 bg-gradient-to-br from-brand/15 via-transparent to-brand-cyan/10 rounded-[3rem] blur-3xl" aria-hidden="true"></div>
+
+        <!-- Reduced tilt + gentle float -->
+        <div class="relative" style="animation: floatGentle 7s ease-in-out infinite; transform: perspective(1400px) rotateY(-4deg) rotateX(2deg);">
+          <div class="rounded-2xl overflow-hidden shadow-browser bg-[#111827] border border-white/10">
+            <!-- Browser chrome -->
+            <div class="bg-[#1a2234] px-4 py-3 flex items-center gap-3 border-b border-white/8">
+              <div class="flex items-center gap-1.5 flex-shrink-0" aria-hidden="true">
+                <div class="w-3 h-3 rounded-full bg-[#FF5F57]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#FEBC2E]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#28C840]"></div>
+              </div>
+              <div class="flex-1 bg-[#0f1729] rounded-md px-3 py-1.5 flex items-center gap-2 border border-white/8">
+                <svg class="w-3 h-3 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-xs text-white/30 font-medium">apexplumbingservices.com</span>
+              </div>
+            </div>
+
+            <!-- Simulated local biz site -->
+            <div class="bg-white">
+              <div class="bg-blue-700 px-4 py-2 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded bg-white/30"></div>
+                  <div class="w-24 h-2 bg-white/60 rounded"></div>
+                </div>
+                <div class="flex gap-3 items-center">
+                  <div class="w-8 h-1.5 bg-white/30 rounded"></div>
+                  <div class="w-8 h-1.5 bg-white/30 rounded"></div>
+                  <div class="w-16 h-5 bg-white rounded shadow flex items-center justify-center">
+                    <div class="w-10 h-1.5 bg-blue-500 rounded"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gradient-to-br from-blue-700 to-blue-900 px-5 py-8 relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 w-24 h-24 bg-white/5 rounded-full -mr-8 -mb-8" aria-hidden="true"></div>
+                <div class="w-2/3">
+                  <div class="w-full h-3 bg-white/80 rounded mb-2"></div>
+                  <div class="w-5/6 h-3 bg-white/70 rounded mb-1"></div>
+                  <div class="w-3/4 h-3 bg-white/60 rounded mb-4"></div>
+                  <div class="w-4/5 h-1.5 bg-white/35 rounded mb-1"></div>
+                  <div class="w-2/3 h-1.5 bg-white/25 rounded mb-5"></div>
+                  <div class="flex gap-2">
+                    <div class="w-20 h-6 bg-white rounded-lg shadow"></div>
+                    <div class="w-16 h-6 bg-transparent border border-white/50 rounded-lg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-blue-50 border-b border-blue-100 px-4 py-2 flex justify-around">
+                {['Licensed', 'Insured', '24/7'].map((t: string) => (
+                  <div class="flex items-center gap-1">
+                    <div class="w-2.5 h-2.5 rounded-full bg-blue-500"></div>
+                    <div class="text-blue-700 font-bold" style="font-size:6px">{t}</div>
+                  </div>
+                ))}
+              </div>
+              <div class="px-4 py-4 bg-white">
+                <div class="w-20 h-2 bg-gray-200 rounded mx-auto mb-3"></div>
+                <div class="grid grid-cols-3 gap-2">
+                  {[1,2,3,4,5,6].map(() => (
+                    <div class="bg-gray-50 rounded-lg p-2 border border-gray-100">
+                      <div class="w-5 h-5 bg-blue-100 rounded mb-1.5"></div>
+                      <div class="w-full h-1.5 bg-gray-200 rounded mb-1"></div>
+                      <div class="w-2/3 h-1 bg-gray-100 rounded"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div class="bg-blue-700 px-4 py-3 flex items-center justify-between">
+                <div class="w-28 h-1.5 bg-white/50 rounded"></div>
+                <div class="w-16 h-5 bg-white rounded"></div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-3 left-6 right-6 h-6 bg-gradient-to-b from-black/20 to-transparent blur-md rounded-full" aria-hidden="true"></div>
+        </div>
+
+        <!-- Floating badge: delivered -->
+        <div class="absolute -bottom-3 -left-5 glass rounded-2xl px-4 py-3 flex items-center gap-3 z-10" style="animation: floatGentle 7s ease-in-out infinite 1.5s;">
+          <div class="w-8 h-8 bg-green-500/15 rounded-xl flex items-center justify-center flex-shrink-0 border border-green-500/20">
+            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Ready to go live</div>
+            <div class="text-xs text-white/40">We handle everything</div>
+          </div>
+        </div>
+
+        <!-- Floating badge: price -->
+        <div class="absolute -top-3 -right-3 bg-gradient-to-br from-brand to-blue-600 rounded-2xl px-4 py-2.5 shadow-[0_8px_30px_rgba(59,130,246,0.5)] z-10 border border-white/10">
+          <div class="text-xs text-blue-200/80 font-medium">One-time price</div>
+          <div class="text-xl font-bold text-white leading-tight font-display">$497</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent to-white pointer-events-none" aria-hidden="true"></div>
+</section>
+
+<style>
+@keyframes floatGentle {
+  0%, 100% { transform: perspective(1400px) rotateY(-4deg) rotateX(2deg) translateY(0px); }
+  50%       { transform: perspective(1400px) rotateY(-4deg) rotateX(2deg) translateY(-8px); }
+}
+</style>

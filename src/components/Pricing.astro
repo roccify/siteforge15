@@ -1,0 +1,145 @@
+---
+const { pricing, brand } = Astro.props;
+---
+
+<section id="pricing" class="py-24 bg-white relative overflow-hidden">
+  <!-- Radial glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_50%,rgba(59,130,246,0.06),transparent)]" aria-hidden="true"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6">
+
+    <!-- Section header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-xs font-semibold text-brand tracking-widest uppercase mb-3">Pricing</p>
+      <h2 class="font-display font-bold text-gray-900 tracking-tight mb-4" style="font-size: clamp(1.9rem, 4vw, 2.75rem);">
+        Simple, transparent pricing
+      </h2>
+      <p class="text-gray-500 text-lg">One price. Everything included. No surprises.</p>
+    </div>
+
+    <!-- Two column layout -->
+    <div class="grid lg:grid-cols-[1fr_420px] gap-10 xl:gap-16 items-start" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- LEFT: Value props + social proof -->
+      <div class="space-y-8">
+
+        <!-- Big stat -->
+        <div class="rounded-3xl bg-gray-50 border border-gray-100 p-8">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">vs. traditional agency</p>
+          <div class="flex items-end gap-4 mb-3">
+            <div>
+              <div class="text-5xl font-display font-bold text-gray-900 leading-none">$497</div>
+              <div class="text-sm text-gray-400 mt-1">SiteForge – one time</div>
+            </div>
+            <div class="text-gray-200 font-display font-bold text-3xl mb-1">vs</div>
+            <div>
+              <div class="text-3xl font-display font-bold text-gray-300 leading-none line-through">$5,000+</div>
+              <div class="text-sm text-gray-300 mt-1">agency average</div>
+            </div>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2 mt-5 overflow-hidden">
+            <div class="bg-brand h-2 rounded-full" style="width: 9%"></div>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">SiteForge costs ~9% of what most agencies charge</p>
+        </div>
+
+        <!-- What's included summary -->
+        <div>
+          <p class="text-sm font-semibold text-gray-700 mb-4">What happens after you pay</p>
+          <div class="space-y-3">
+            {pricing.afterPayment.steps.map((step: string, i: number) => (
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand text-white text-xs font-bold font-display flex items-center justify-center shadow-glow-sm">
+                  {i + 1}
+                </div>
+                <p class="text-gray-600 text-sm">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Payment trust -->
+        <div class="flex flex-wrap gap-3">
+          {[
+            { icon: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>`, label: "Secure via Stripe" },
+            { icon: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, label: "50% upfront only" },
+            { icon: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>`, label: "You own the files" },
+          ].map((t: any) => (
+            <div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gray-50 border border-gray-100 text-sm text-gray-500">
+              <span class="text-brand">
+                <Fragment set:html={t.icon} />
+              </span>
+              {t.label}
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Pricing card -->
+      <div class="relative">
+        <!-- Glow -->
+        <div class="absolute -inset-4 bg-brand/8 rounded-[2.5rem] blur-2xl" aria-hidden="true"></div>
+
+        <div class="relative bg-white rounded-3xl border-2 border-brand/20 shadow-[0_30px_80px_-15px_rgba(59,130,246,0.2)] p-8">
+          <!-- Badge -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-brand text-white text-xs font-bold shadow-glow-sm">
+              Most Popular
+            </span>
+          </div>
+
+          <!-- Price -->
+          <div class="text-center mb-7 pt-3">
+            <div class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Professional Website</div>
+            <div class="flex items-center justify-center gap-3 mb-1">
+              <span class="text-2xl font-display font-bold text-gray-300 line-through">{pricing.originalPrice}</span>
+              <span class="px-2 py-0.5 rounded-md bg-green-100 text-green-700 text-xs font-bold">50% OFF</span>
+            </div>
+            <div class="font-display font-bold text-gray-900 leading-none" style="font-size: 5rem;">$497</div>
+            <div class="text-gray-400 font-medium mt-1 text-sm">{pricing.period}</div>
+            <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+              {pricing.urgency}
+            </div>
+          </div>
+
+          <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-6"></div>
+
+          <!-- Includes -->
+          <ul class="space-y-2.5 mb-7">
+            {pricing.includes.map((item: string) => (
+              <li class="flex items-start gap-3 text-sm text-gray-600">
+                <span class="flex-shrink-0 mt-0.5 w-4 h-4 rounded-full bg-brand/10 flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <!-- Anchoring -->
+          <p class="text-center text-xs text-gray-400 mb-4">
+            Agencies charge <span class="font-semibold text-gray-600">$3,000-$10,000</span> for the same result.
+          </p>
+
+          <!-- CTA -->
+          <a
+            href={brand.stripePaymentUrl}
+            class="block w-full text-center px-8 py-4 rounded-2xl bg-brand text-white font-bold text-base hover:bg-brand-dark transition-all duration-200 shadow-[0_8px_30px_rgba(59,130,246,0.35)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.5)] hover:scale-[1.02]"
+          >
+            {pricing.cta}
+          </a>
+
+          <!-- Care plan -->
+          <p class="mt-5 pt-5 border-t border-gray-100 text-xs text-gray-400 text-center">
+            {pricing.carePlan}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+const { industries } = Astro.props;
+
+// Brand-consistent palette – blues, slates, indigos
+const cardStyles = [
+  { bg: 'bg-blue-600',    hover: 'hover:bg-blue-700' },
+  { bg: 'bg-blue-500',    hover: 'hover:bg-blue-600' },
+  { bg: 'bg-indigo-600',  hover: 'hover:bg-indigo-700' },
+  { bg: 'bg-slate-600',   hover: 'hover:bg-slate-700' },
+  { bg: 'bg-blue-700',    hover: 'hover:bg-blue-800' },
+  { bg: 'bg-indigo-500',  hover: 'hover:bg-indigo-600' },
+  { bg: 'bg-sky-600',     hover: 'hover:bg-sky-700' },
+  { bg: 'bg-slate-700',   hover: 'hover:bg-slate-800' },
+  { bg: 'bg-blue-800',    hover: 'hover:bg-blue-900' },
+  { bg: 'bg-indigo-700',  hover: 'hover:bg-indigo-800' },
+  { bg: 'bg-sky-700',     hover: 'hover:bg-sky-800' },
+  { bg: 'bg-slate-500',   hover: 'hover:bg-slate-600' },
+  // extra – for the "+more" card
+  { bg: 'bg-gray-100',    hover: 'hover:bg-gray-200' },
+];
+
+const svgIcons: Record<string, string> = {
+  "Plumber":          `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l4 4m10-4l-4 4M7 7l10 10M7 17l4-4m0 0l3 3m-3-3l-3-3m3 3l3-3"/></svg>`,
+  "Electrician":      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+  "HVAC":             `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>`,
+  "Roofer":           `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg>`,
+  "Landscaper":       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12m0 0C12 7 7 4 2 6c2 4 5 6 10 6zm0 0c0-5 5-8 10-6-2 4-5 6-10 6z"/></svg>`,
+  "Contractor":       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+  "Pressure Washing": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 0l-2-2m2 2l2-2M6 8l2 2m8-2l-2 2M4 14h4m8 0h4M8 20l2-2m4 2l-2-2m-2-4v4"/></svg>`,
+  "Tree Service":     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7m0 0l-3-3m3 3l3-3M5 14l3-4-3-4h14l-3 4 3 4"/></svg>`,
+  "Garage Door":      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="M2 8h20M2 13h20M8 3v5m0 5v8m8-18v5m0 5v8"/></svg>`,
+  "Painter":          `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`,
+  "Pest Control":     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v1h1a2 2 0 012 2v2a2 2 0 01-2 2h-1v1a4 4 0 01-8 0v-1H7a2 2 0 01-2-2V9a2 2 0 012-2h1V6a4 4 0 014-4z"/><path d="M8 7l-2-2M16 7l2-2M8 17l-2 2M16 17l2 2"/></svg>`,
+  "Concrete":         `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="20" height="7" rx="1"/><path d="M6 14V8a2 2 0 012-2h8a2 2 0 012 2v6"/><path d="M10 6V4m4 2V4"/></svg>`,
+};
+---
+
+<section class="py-24 bg-gray-50 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="text-xs font-semibold text-brand tracking-widest uppercase mb-3">Industries</p>
+      <h2 class="font-display font-bold text-gray-900 tracking-tight mb-4" style="font-size: clamp(1.9rem, 4vw, 2.75rem);">
+        Who it's for
+      </h2>
+      <p class="text-gray-500 text-lg max-w-xl mx-auto">
+        Built for local service businesses that want a professional website without agency pricing.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      {industries.items.map((industry: any, i: number) => {
+        const s = cardStyles[i % (cardStyles.length - 1)];
+        return (
+          <div
+            class={`group relative rounded-2xl overflow-hidden cursor-default ${s.bg} ${s.hover} transition-all duration-200`}
+            data-aos="fade-up"
+            data-aos-delay={i * 40}
+          >
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.5) 0%, transparent 60%);" aria-hidden="true"></div>
+            <div class="relative px-4 py-5 flex flex-col items-start gap-3">
+              <div class="w-8 h-8 text-white/90">
+                <Fragment set:html={svgIcons[industry.label] ?? svgIcons['Contractor']} />
+              </div>
+              <span class="text-sm font-bold text-white leading-tight">{industry.label}</span>
+            </div>
+          </div>
+        );
+      })}
+
+      <!-- And many more - 12th card -->
+      <div
+        class="group relative rounded-2xl overflow-hidden cursor-default bg-white border-2 border-dashed border-gray-200 hover:border-brand/30 transition-all duration-200"
+        data-aos="fade-up"
+        data-aos-delay={industries.items.length * 40}
+      >
+        <div class="px-4 py-5 flex flex-col items-start gap-3">
+          <div class="w-8 h-8 text-gray-300 group-hover:text-brand/50 transition-colors">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>
+            </svg>
+          </div>
+          <span class="text-sm font-bold text-gray-400 group-hover:text-gray-500 leading-tight transition-colors">And many more</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

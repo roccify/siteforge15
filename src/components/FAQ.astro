@@ -1,0 +1,97 @@
+---
+const { faq } = Astro.props;
+---
+
+<section id="faq" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="grid lg:grid-cols-[360px_1fr] gap-16 items-start">
+
+      <!-- Left: sticky header -->
+      <div class="lg:sticky lg:top-28" data-aos="fade-right">
+        <p class="text-xs font-semibold text-brand tracking-widest uppercase mb-3">FAQ</p>
+        <h2 class="font-display font-bold text-gray-900 tracking-tight mb-5 leading-tight" style="font-size: clamp(1.9rem, 4vw, 2.75rem);">
+          Questions?<br/>We have answers.
+        </h2>
+        <p class="text-gray-500 text-base leading-relaxed mb-8">
+          Everything you need to know before getting started.
+        </p>
+        <!-- Quick trust stats -->
+        <div class="space-y-4">
+          {[
+            { num: "3-5", label: "Days to delivery" },
+            { num: "50%", label: "Upfront only" },
+            { num: "$0", label: "Monthly fees" },
+          ].map((stat: any) => (
+            <div class="flex items-center gap-4">
+              <div class="font-display font-bold text-2xl text-brand w-16">{stat.num}</div>
+              <div class="text-sm text-gray-500">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: accordion -->
+      <div class="space-y-2" data-aos="fade-left">
+        {faq.map((item: any, i: number) => (
+          <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 transition-colors">
+            <button
+              class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${i}`}
+            >
+              <span class="font-semibold text-gray-900 text-sm leading-snug">{item.question}</span>
+              <svg
+                class="faq-icon w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-200"
+                style=""
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div
+              id={`faq-answer-${i}`}
+              class="faq-answer px-6 pb-5 hidden"
+              role="region"
+            >
+              <p class="text-gray-500 text-sm leading-relaxed">{item.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script is:inline>
+  document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answerId = btn.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+      var icon = btn.querySelector('.faq-icon');
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      document.querySelectorAll('.faq-trigger').forEach(function(other) {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          var otherAnswer = document.getElementById(other.getAttribute('aria-controls'));
+          var otherIcon = other.querySelector('.faq-icon');
+          if (otherAnswer) otherAnswer.classList.add('hidden');
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+
+      if (isOpen) {
+        btn.setAttribute('aria-expanded', 'false');
+        answer.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>

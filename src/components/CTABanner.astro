@@ -1,0 +1,56 @@
+---
+const { cta, brand } = Astro.props;
+---
+
+<section class="relative py-36 bg-[#0A0F1E] overflow-hidden noise">
+  <div class="hero-mesh absolute inset-0" aria-hidden="true"></div>
+  <div class="dot-grid absolute inset-0 opacity-30" aria-hidden="true"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" aria-hidden="true"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-medium mb-8">
+      <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+      Spots available – fast turnaround
+    </div>
+
+    <h2 class="font-display font-bold text-white mb-5 leading-tight" style="font-size: clamp(2.2rem, 5vw, 3.75rem);">
+      {cta.headline}
+    </h2>
+
+    <p class="text-white/50 text-lg mb-10 max-w-xl mx-auto">
+      {cta.supporting}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={brand.stripePaymentUrl}
+        class="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand text-white font-bold text-base hover:bg-brand-dark transition-all duration-200 shadow-[0_0_40px_rgba(59,130,246,0.4)] hover:shadow-[0_0_60px_rgba(59,130,246,0.6)] hover:scale-[1.02]"
+      >
+        {cta.button}
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+
+      <!-- Trust micro-line -->
+      <p class="text-white/30 text-sm">50% upfront · 50% on delivery · No surprises</p>
+    </div>
+
+    <!-- Bottom trust row -->
+    <div class="mt-14 pt-10 border-t border-white/8 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+      {[
+        { num: "$497", label: "One-time price" },
+        { num: "3-5", label: "Days to delivery" },
+        { num: "100%", label: "Your files, forever" },
+      ].map((stat: any) => (
+        <div>
+          <div class="font-display font-bold text-white text-2xl">{stat.num}</div>
+          <div class="text-white/35 text-xs mt-1">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

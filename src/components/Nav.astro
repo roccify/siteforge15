@@ -1,0 +1,93 @@
+---
+const { nav, brand } = Astro.props;
+---
+
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <!-- Glass pill -->
+  <div class="mx-4 mt-3 rounded-2xl bg-[#0A0F1E]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+    <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 flex-shrink-0" aria-label="SiteForge home">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand to-brand-cyan flex items-center justify-center flex-shrink-0">
+        <span class="text-white font-bold text-xs font-display">S</span>
+      </div>
+      <span class="font-display font-bold text-base text-white tracking-wide">{brand.name}</span>
+    </a>
+
+    <!-- Desktop nav – centered -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+      {nav.links.map((link: any) => (
+        <a href={link.href} class="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a
+      href={nav.cta.href}
+      class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand text-white text-sm font-semibold hover:bg-brand-dark transition-all duration-200 flex-shrink-0"
+    >
+      {nav.cta.label}
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="hamburger"
+      class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <span class="hamburger-line block w-5 h-0.5 bg-white/70 transition-all duration-300 origin-center"></span>
+      <span class="hamburger-line block w-5 h-0.5 bg-white/70 transition-all duration-300 origin-center"></span>
+      <span class="hamburger-line block w-5 h-0.5 bg-white/70 transition-all duration-300 origin-center"></span>
+    </button>
+  </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-nav"
+    class="hidden mx-4 mt-1 rounded-2xl bg-[#0A0F1E]/95 backdrop-blur-xl border border-white/10"
+    role="navigation"
+    aria-label="Mobile navigation"
+  >
+    <div class="px-5 py-4 flex flex-col gap-1">
+      {nav.links.map((link: any) => (
+        <a
+          href={link.href}
+          class="mobile-nav-link text-base font-medium text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href={nav.cta.href}
+        class="mobile-nav-link mt-3 w-full text-center px-5 py-3.5 rounded-xl bg-brand text-white font-semibold hover:bg-brand-dark transition-colors"
+      >
+        {nav.cta.label}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileNav?.classList.contains('hidden') === false;
+    mobileNav?.classList.toggle('hidden');
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.add('hidden');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

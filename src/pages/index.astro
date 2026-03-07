@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import DemoGrid from '../components/DemoGrid.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import WhoItsFor from '../components/WhoItsFor.astro';
+import Features from '../components/Features.astro';
+import Comparison from '../components/Comparison.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+
+import content from '../data/content.json';
+---
+
+<Layout title={content.seo.title} description={content.seo.description}>
+  <Nav nav={content.nav} brand={content.brand} />
+  <main>
+    <Hero hero={content.hero} />
+    <DemoGrid demos={content.demos} />
+    <HowItWorks howItWorks={content.howItWorks} />
+    <WhoItsFor industries={content.industries} />
+    <Features features={content.features} />
+    <Comparison comparison={content.comparison} />
+    <Pricing pricing={content.pricing} brand={content.brand} />
+    <FAQ faq={content.faq} />
+    <CTABanner cta={content.cta} brand={content.brand} />
+  </main>
+  <Footer footer={content.footer} brand={content.brand} />
+</Layout>
