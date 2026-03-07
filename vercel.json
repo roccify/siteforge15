@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/plumbing",
+      "destination": "https://plumbing13.vercel.app"
+    },
+    {
+      "source": "/plumbing/:path*",
+      "destination": "https://plumbing13.vercel.app/:path*"
+    },
+    {
+      "source": "/landscaping",
+      "destination": "https://landscaping34.vercel.app"
+    },
+    {
+      "source": "/landscaping/:path*",
+      "destination": "https://landscaping34.vercel.app/:path*"
+    },
+    {
+      "source": "/electrician",
+      "destination": "https://electrician09.vercel.app"
+    },
+    {
+      "source": "/electrician/:path*",
+      "destination": "https://electrician09.vercel.app/:path*"
+    }
+  ]
+}
