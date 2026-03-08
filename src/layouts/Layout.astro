@@ -23,7 +23,8 @@ const { title, description } = Astro.props;
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     [data-aos] { opacity: 1 !important; transform: none !important; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { overflow-x: hidden; }
     ::selection { background: rgba(59,130,246,0.25); color: #fff; }
     * { -webkit-font-smoothing: antialiased; }
 
