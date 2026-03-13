@@ -50,22 +50,40 @@
   },
   "demos": [
     {
-      "company": "Mesa Flow Plumbing",
-      "vertical": "Plumber",
-      "url": "https://plumbing13.vercel.app/",
-      "thumbnail": "/images/demos/plumbing.jpg"
-    },
-    {
-      "company": "Pinnacle Power Systems",
-      "vertical": "Electrician",
-      "url": "https://electrician09.vercel.app/",
-      "thumbnail": "/images/demos/electrician.jpg"
-    },
-    {
       "company": "Greenform Landscaping",
       "vertical": "Landscaper",
       "url": "https://landscaping34.vercel.app/",
-      "thumbnail": "/images/demos/landscaping.jpg"
+      "thumbnail": "/images/demos/demo1.jpg"
+    },
+    {
+      "company": "Precision Auto",
+      "vertical": "Auto Repair",
+      "url": "https://autorepair11.vercel.app/",
+      "thumbnail": "/images/demos/demo2.jpg"
+    },
+    {
+      "company": "Summit Climate",
+      "vertical": "HVAC",
+      "url": "https://hvac10.vercel.app/",
+      "thumbnail": "/images/demos/demo3.jpg"
+    },
+    {
+      "company": "ElevateClean Solutions",
+      "vertical": "Cleaning",
+      "url": "https://cleaning04.vercel.app/",
+      "thumbnail": "/images/demos/demo4.jpg"
+    },
+    {
+      "company": "Mesa Flow Plumbing",
+      "vertical": "Plumber",
+      "url": "https://plumbing13.vercel.app/",
+      "thumbnail": "/images/demos/demo5.jpg"
+    },
+    {
+      "company": "Reliablefix Handyman",
+      "vertical": "Handyman",
+      "url": "https://handyman20.vercel.app/",
+      "thumbnail": "/images/demos/demo6.jpg"
     }
   ],
   "howItWorks": {
