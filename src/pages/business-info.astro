@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Business Information – SiteForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; max-width: 480px; width: 100%; }
+    h1 { font-size: 1.125rem; font-weight: 600; color: #0f172a; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #f1f5f9; }
+    .row { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 1.25rem; }
+    .label { font-size: 0.75rem; font-weight: 500; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+    .value { font-size: 0.9375rem; color: #1e293b; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Business Information</h1>
+    <div class="row">
+      <span class="label">Owner</span>
+      <span class="value">Rok Kašpar</span>
+    </div>
+    <div class="row">
+      <span class="label">Business Name</span>
+      <span class="value">Kamnoseštvo, Rok Kašpar s.p.</span>
+    </div>
+    <div class="row">
+      <span class="label">Address</span>
+      <span class="value">Na Kalu 16, 4202 Naklo</span>
+    </div>
+    <div class="row">
+      <span class="label">Tax ID (Davčna številka)</span>
+      <span class="value">94827290</span>
+    </div>
+    <div class="row">
+      <span class="label">Country</span>
+      <span class="value">Slovenia</span>
+    </div>
+  </div>
+</body>
+</html>
