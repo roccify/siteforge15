@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import content from '../data/content.json';
+const { brand } = content;
+---
+
+<Layout
+  title="Message Sent – SiteForge"
+  description="Thank you for reaching out to SiteForge."
+>
+
+<!-- Nav -->
+<header class="fixed top-0 left-0 right-0 z-50">
+  <div class="mx-4 mt-3 rounded-2xl bg-[#0A0F1E]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+    <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5" aria-label="SiteForge home">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand to-brand-cyan flex items-center justify-center">
+          <span class="text-white font-bold text-xs font-display">S</span>
+        </div>
+        <span class="font-display font-bold text-base text-white tracking-wide">{brand.name}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Content -->
+<main class="bg-white min-h-screen flex items-center justify-center px-6">
+  <div class="text-center max-w-md">
+
+    <!-- Checkmark icon -->
+    <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
+      <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+      </svg>
+    </div>
+
+    <h1 class="text-3xl font-display font-bold text-ink mb-3">Message sent!</h1>
+    <p class="text-ink/50 text-base leading-relaxed mb-8">
+      Thanks for reaching out. We'll get back to you within 1 business day.
+    </p>
+
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand text-white font-semibold text-sm hover:bg-brand-dark transition-colors"
+    >
+      ← Back to home
+    </a>
+
+  </div>
+</main>
+
+</Layout>

@@ -3,7 +3,7 @@
     "name": "SiteForge",
     "tagline": "Professional websites for local service businesses",
     "logo": "/images/logo-placeholder.svg",
-    "formEndpoint": "roccify@gmail.com",
+    "formEndpoint": "hello@siteforgeonline.com",
     "stripePaymentUrl": "https://buy.stripe.com/test_4gMeVfbqieQy5sf5wPawo00",
     "stripeCarePlanUrl": "https://buy.stripe.com/YOUR_CARE_PLAN_LINK"
   },
